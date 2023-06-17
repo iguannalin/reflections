@@ -1,0 +1,32 @@
+html {
+  display: block;
+  width: 100%;
+  margin: auto 0;
+}
+
+body {
+  background-color:rgb(206, 206, 206);
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.content {    
+  width: 90%;
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+#left {
+  width: 45%;
+  border: 2px solid rgb(51, 0, 255);
+}
+#right {
+  width: 45%;
+  border: 2px solid rgb(195, 255, 0);
+  display: block;
+  word-break: break-word;
+  padding: 2px;
+}
