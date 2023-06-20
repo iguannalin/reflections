@@ -10,7 +10,7 @@ window.addEventListener("load", () => {
     spaced.forEach((letter) => {
       setTimeout(async () => {
         right.innerHTML += letter;
-      }, timer += 50);
+      }, timer += 10);
     });
-  })
+  });
 });

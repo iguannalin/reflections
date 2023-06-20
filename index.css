@@ -22,7 +22,7 @@ body {
 
 .content {    
   width: 90%;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
@@ -32,16 +32,17 @@ body {
 
 #left {
   width: 45%;
-  border: 2px solid rgb(51, 0, 255);
+  /* border: 2px solid rgb(51, 0, 255); */
   z-index: 1;
-  background: #ffffff2e;
+  /* background: #ffffff2e; */
 }
 #right {
   width: 45%;
-  border: 2px solid rgb(195, 255, 0);
+  /* border: 2px solid rgb(195, 255, 0); */
   display: block;
   word-break: break-word;
   padding: 2px;
   -webkit-box-reflect: left;
   text-shadow: #858ebc 1px 0 3px;
+  transform: perspective(300px) scaleZ(7) rotateX(18deg);
 }
