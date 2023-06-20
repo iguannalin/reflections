@@ -9,7 +9,6 @@ let debounce = function(func, delay) {
 
 function onType(e) {
   if (!e || !e.data) return;
-  console.log(e.target.value);
   right.innerHTML += e.data;
   if (e.data.match(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g)) left.innerHTML += e.data;
   else debounce(() => translate(e.target.value), 250);
