@@ -20,9 +20,24 @@ body {
   color: var(--main-text-color);
 }
 
+.container {
+  margin-top: 10%;
+}
+
+input {
+  margin: 12px;
+}
+
+.prompt-box {
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 50px;
+}
+
 .content {    
   width: 90%;
-  /* border: 2px solid red; */
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
@@ -34,15 +49,17 @@ body {
   width: 45%;
   display: block;
   word-break: break-word;
-  padding: 2px;
+  box-sizing: border-box;
+  padding: 2px 50px 2px 2px;
   direction: rtl;
   transform: rotate3d(0, -10, 1, 180deg);
   text-align: left;
   text-shadow: #858ebc 1px 0 3px;
 }
+
 #right {
   text-shadow: #858ebc 1px 0 3px;
-  width: 45%;
+  width: 23%;
   display: block;
   word-break: break-word;
   padding: 2px;

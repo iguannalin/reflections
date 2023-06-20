@@ -1,17 +1,33 @@
-let text = "Anna Y Lin is a Cantonese-American artist who is currently pursuing a masters at NYU's ITP. She studied psychology and, initially, art--which led her to a love of computer science. She's worked in multiple fields as a UX engineer in the Bay Area and Boston, and now works on projects that investigates via introspection our relationship to technology and the digital world through art.";
-let speed = 10;
+let timer = 100;
+let speed = 100;
+let timeout;
+
+let debounce = function(func, delay) {
+  clearTimeout(timeout);
+  timeout = setTimeout(func, delay);
+};
+
+function onType(e) {
+  if (!e || !e.data) return;
+  console.log(e.target.value);
+  right.innerHTML += e.data;
+  if (e.data.match(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g)) left.innerHTML += e.data;
+  else debounce(() => translate(e.target.value), 250);
+}
+
+async function translate(q) {
+  let encodedQuery = encodeURI(q);
+  let data;
+  right.innerHTML = q;
+  await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&dt=t&sl=en&tl=zh-CN&q=${encodedQuery}`)
+  .then((e) => e.json())
+  .then((d) => { data = d[0][0][0]; });
+  if (data) left.innerHTML = data;
+}
+
 window.addEventListener("load", () => {
   const left = document.getElementById("left");
   const right = document.getElementById("right");
-  let timer = 100;
-  text.split(" ").forEach((word, windex) => {
-    let spaced = word.split("")
-    spaced.push(" ");
-    spaced.forEach((letter) => {
-      setTimeout(async () => {
-        right.innerHTML += letter;
-        left.innerHTML += letter;
-      }, timer += speed);
-    });
-  });
+  let input = document.getElementById("prompt");
+  input.oninput = onType;
 });
