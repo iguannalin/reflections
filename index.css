@@ -52,7 +52,7 @@ input {
   line-height: 22px;
 }
 
-#left {
+.left {
   width: 5%;
   position: absolute;
   display: block;
