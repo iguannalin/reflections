@@ -58,8 +58,8 @@ input {
   display: block;
   word-break: break-word;
   box-sizing: border-box;
-  top: 20%;
-  left: 15%;
+  top: 25%;
+  left: 40%;
   direction: rtl;
   transform: rotate3d(0, -10, 1, 180deg);
   text-align: left;
